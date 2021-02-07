@@ -279,7 +279,7 @@ async def add_note(message: Message) -> None:
     replied = message.reply_to_message
     if replied and replied.text:
         content = replied.text.html
-    content = "📝 **Note** : `{}`\n\n{}".format(notename, content or "")
+    content = "**Note** : #{}\n\n{}".format(notename, content or "")
     if not (content or (replied and replied.media)):
         await message.err(text="No Content Found!")
         return
