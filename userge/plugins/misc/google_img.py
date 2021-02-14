@@ -34,7 +34,7 @@ class Colors:
 
 
 @userge.on_cmd(
-    "(?:gimg)",
+    "(?:gimg|img)",
     about={
         "header": "Google Image Downloader",
         "description": "Search and download images from google and upload to telegram",
@@ -70,7 +70,7 @@ async def gimg_down(message: Message):
     else:
         await message.err("`Input not found!...`", del_in=5)
         return
-    await message.edit("searching")
+    await message.edit("🔎")
     start_t = datetime.now()
     color_ = None
     flags_ = message.flags
@@ -95,14 +95,14 @@ async def gimg_down(message: Message):
     else:
         arguments = await get_arguments(query=text)
     media_type = "Gifs" if allow_gif else "Pics"
-    await message.edit(f"Downloading  {limit} {media_type} ...")
+    await message.edit(f"⬇️  Downloading  {limit} {media_type} ...")
     try:
         results = await gimg_downloader(arguments)
     except Exception as e:
         await message.err(str(e), del_in=7)
         return
     if upload_:
-        await message.edit(f"Uploading {limit} {media_type} ...")
+        await message.edit(f"⬆️  Uploading {limit} {media_type} ...")
         try:
             await upload_image_grp(results, message, doc_)
         except Exception as err:
@@ -202,7 +202,7 @@ async def upload_image_grp(results, message: Message, doc: bool = False):
         for num, m_ in enumerate(mgroups, start=1):
             try:
                 await message.edit(
-                    f"Uploading - **{round(num / len(mgroups) * 100)} %** ..."
+                    f"⬆️  Uploading - **{round(num / len(mgroups) * 100)} %** ..."
                 )
                 await message.client.send_media_group(message.chat.id, media=m_)
                 await asyncio.sleep(5)
