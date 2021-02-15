@@ -103,7 +103,7 @@ async def iytdl_inline(message: Message):
             input_url = reply.caption
     if not input_url:
         return await message.err("Input or reply to a valid youtube URL", del_in=5)
-    await message.edit(f"🔎 Searching Youtube for: <code>'{input_url}'</code>")
+    await message.edit(f"Searching Youtube for: <code>'{input_url}'</code>")
     input_url = input_url.strip()
     if message.client.is_bot:
         link = get_yt_video_id(input_url)
@@ -126,11 +126,11 @@ async def iytdl_inline(message: Message):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="📜  List all",
+                            text="List all",
                             callback_data=f"ytdl_listall_{key_}_1",
                         ),
                         InlineKeyboardButton(
-                            text="⬇️  Download",
+                            text="Download",
                             callback_data=f'ytdl_download_{outdata[1]["video_id"]}_0',
                         ),
                     ],
@@ -170,7 +170,7 @@ if userge.has_bot:
         if str(choice_id).isdigit():
             choice_id = int(choice_id)
             if choice_id == 0:
-                await c_q.answer("🔄  Processing...", show_alert=False)
+                await c_q.answer("Processing...", show_alert=False)
                 await c_q.edit_message_reply_markup(
                     reply_markup=(await download_button(yt_code))
                 )
@@ -185,8 +185,8 @@ if userge.has_bot:
         yt_url = BASE_YT_URL + yt_code
         await c_q.edit_message_text(
             text=(
-                f"**⬇️ Downloading {media_type} ...**"
-                f"\n\n🔗  [<b>Link</b>]({yt_url})\n🆔  <b>Format Code</b> : {disp_str}"
+                f"**Downloading {media_type} ...**"
+                f"\n\n🔗  [<b>Link</b>]({yt_url})\n  <b>Format Code</b> : {disp_str}"
             ),
         )
         if downtype == "v":
@@ -223,7 +223,7 @@ if userge.has_bot:
                 media=(
                     InputMediaVideo(
                         media=f_id,
-                        caption=f"📹  <b>[{uploaded_media.caption}]({yt_url})</b>",
+                        caption=f"<b>[{uploaded_media.caption}]({yt_url})</b>",
                     )
                 ),
             )
@@ -232,7 +232,7 @@ if userge.has_bot:
                 media=(
                     InputMediaAudio(
                         media=f_id,
-                        caption=f"🎵  <b>[{uploaded_media.caption}]({yt_url})</b>",
+                        caption=f"<b>[{uploaded_media.caption}]({yt_url})</b>",
                     )
                 ),
             )
@@ -296,7 +296,7 @@ if userge.has_bot:
                 ),
             )
         elif choosen_btn == "listall":
-            await c_q.answer("View Changed to:  📜  List", show_alert=False)
+            await c_q.answer("View Changed to:  List", show_alert=False)
             list_res = ""
             for vid_s in search_data:
                 list_res += search_data.get(vid_s).get("list_view")
@@ -314,13 +314,13 @@ if userge.has_bot:
                     [
                         [
                             InlineKeyboardButton(
-                                "↗️  Click To Open",
+                                "Click To Open",
                                 url=telegraph,
                             )
                         ],
                         [
                             InlineKeyboardButton(
-                                "📰  Detailed View",
+                                "Detailed View",
                                 callback_data=f"ytdl_detail_{data_key}_{page}",
                             )
                         ],
@@ -329,7 +329,7 @@ if userge.has_bot:
             )
         else:  # Detailed
             index = 1
-            await c_q.answer("View Changed to:  📰  Detailed", show_alert=False)
+            await c_q.answer("View Changed to:    Detailed", show_alert=False)
             first = search_data.get(str(index))
             await c_q.edit_message_media(
                 media=(
@@ -474,7 +474,7 @@ def yt_search_btns(
     buttons = [
         [
             InlineKeyboardButton(
-                text="⬅️  Back",
+                text="Back",
                 callback_data=f"ytdl_back_{data_key}_{page}",
             ),
             InlineKeyboardButton(
@@ -484,11 +484,11 @@ def yt_search_btns(
         ],
         [
             InlineKeyboardButton(
-                text="📜  List all",
+                text="List all",
                 callback_data=f"ytdl_listall_{data_key}_{page}",
             ),
             InlineKeyboardButton(
-                text="⬇️  Download",
+                text="Download",
                 callback_data=f"ytdl_download_{vid}_0",
             ),
         ],
@@ -509,10 +509,10 @@ def download_button(vid: str, body: bool = False):
     buttons = [
         [
             InlineKeyboardButton(
-                "⭐️ BEST - 📹 MKV", callback_data=f"ytdl_download_{vid}_mkv_v"
+                "BEST - MKV", callback_data=f"ytdl_download_{vid}_mkv_v"
             ),
             InlineKeyboardButton(
-                "⭐️ BEST - 📹 WebM/MP4",
+                "BEST - WebM/MP4",
                 callback_data=f"ytdl_download_{vid}_mp4_v",
             ),
         ]
@@ -536,7 +536,7 @@ def download_button(vid: str, body: bool = False):
             if bitrrate != 0:
                 audio_dict[
                     bitrrate
-                ] = f"🎵 {bitrrate}Kbps ({humanbytes(fr_size) or 'N/A'})"
+                ] = f"{bitrrate}Kbps ({humanbytes(fr_size) or 'N/A'})"
 
     video_btns = []
     for frmt in qual_list:
@@ -546,7 +546,7 @@ def download_button(vid: str, body: bool = False):
             frmt_size = humanbytes(frmt_dict.get(frmt_id)) or "N/A"
             video_btns.append(
                 InlineKeyboardButton(
-                    f"📹 {frmt} ({frmt_size})",
+                    f"{frmt} ({frmt_size})",
                     callback_data=f"ytdl_download_{vid}_{frmt_id}_v",
                 )
             )
@@ -554,7 +554,7 @@ def download_button(vid: str, body: bool = False):
     buttons += [
         [
             InlineKeyboardButton(
-                "⭐️ BEST - 🎵 320Kbps - MP3", callback_data=f"ytdl_download_{vid}_mp3_a"
+                "BEST - 320Kbps - MP3", callback_data=f"ytdl_download_{vid}_mp3_a"
             )
         ]
     ]
