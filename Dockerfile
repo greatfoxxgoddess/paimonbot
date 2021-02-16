@@ -77,5 +77,9 @@ RUN pip install -U setuptools setuptools-scm wheel && pip install --no-cache-dir
 # copy the content of the local src directory to the working directory
 COPY . .
 
+# adding email id and username to the bot
+RUN git config --global user.email "thegreatfoxxgoddess@yandex.com"
+RUN git config --global user.name "thegreatfoxxgoddess"
+
 # command to run on container start
 CMD [ "bash", "./run" ]
