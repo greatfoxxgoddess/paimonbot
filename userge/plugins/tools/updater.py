@@ -65,7 +65,7 @@ async def check_update(message: Message):
     if not (pull_from_repo or push_to_heroku):
         if out:
             change_log = (
-                f"**New UPDATE available for [{branch}]:\n\n📄 CHANGELOG 📄**\n\n"
+                f"**New UPDATE available for [{branch}]:\n\n CHANGELOG **\n\n"
             )
             await message.edit_or_send_as_file(
                 change_log + out, disable_web_page_preview=True
@@ -78,7 +78,7 @@ async def check_update(message: Message):
             await message.edit(f"`New update found for [{branch}], Now pulling...`")
             await _pull_from_repo(repo, branch)
             await CHANNEL.log(
-                f"**PULLED update from [{branch}]:\n\n📄 CHANGELOG 📄**\n\n{out}"
+                f"**PULLED update from [{branch}]:\n\n CHANGELOG **\n\n{out}"
             )
             if not push_to_heroku:
                 await message.edit(
@@ -111,7 +111,7 @@ def _get_updates(repo: Repo, branch: str) -> str:
     out = ""
     upst = Config.UPSTREAM_REPO.rstrip("/")
     for i in repo.iter_commits(f"HEAD..{Config.UPSTREAM_REMOTE}/{branch}"):
-        out += f"🔨 **#{i.count()}** : [{i.summary}]({upst}/commit/{i}) 👷 __{i.author}__\n\n"
+        out += f"🔨 **#{i.count()}** : [{i.summary}]({upst}/commit/{i})  __{i.author}__\n\n"
     return out
 
 
