@@ -127,8 +127,8 @@ class Bot_Alive:
     @staticmethod
     def alive_info():
         alive_info = f"""
-ㅤㅤㅤ
-  🧬  <b> [paimon](tg://openmessage?user_id=1486647366) </b>  :   <code>{get_version()}</code>
+✨✨♥️
+  🧬  <b> [paimon](tg://openmessage?user_id=1486647366) </b>:   <code>{get_version()}</code>
   🐍  <b> Python  :</b>    <code>v{versions.__python_version__}</code>
   🔥  <b> Pyro      :</b>    <code>v{versions.__pyro_version__}</code>
   🦋  <b> User      :</b>    `Alicia`
