@@ -127,13 +127,12 @@ class Bot_Alive:
     @staticmethod
     def alive_info():
         alive_info = f"""
-<b> ➖➖➖➖➖➖➖➖ </b>
-  🧬  <b>|</b> [paimon](tg://openmessage?user_id=1486647366)  :   <code>{get_version()}</code>
-  🐍  <b>| Python  :</b>    <code>v{versions.__python_version__}</code>
-  🔥  <b>| Pyro      :</b>    <code>v{versions.__pyro_version__}</code>
-  🦋  <b>| User      :</b>          `Alicia`
-<b> ➖➖➖➖➖➖➖➖ </b>
-   {Bot_Alive._get_mode()}      <b>|</b>     {userge.uptime}
+  🧬  <b> [paimon](tg://openmessage?user_id=1486647366) </b>  :   <code>{get_version()}</code>
+  🐍  <b> Python  :</b>    <code>v{versions.__python_version__}</code>
+  🔥  <b> Pyro      :</b>    <code>v{versions.__pyro_version__}</code>
+  🦋  <b> User      :</b>    `Alicia`
+
+ {Bot_Alive._get_mode()}      <b>|</b>     {userge.uptime}
 """
         return alive_info
 
