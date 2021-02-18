@@ -131,7 +131,7 @@ class Bot_Alive:
   🧬  <b>|</b> [paimon](tg://openmessage?user_id=1486647366)  :   <code>{get_version()}</code>
   🐍  <b>| Python  :</b>    <code>v{versions.__python_version__}</code>
   🔥  <b>| Pyro      :</b>    <code>v{versions.__pyro_version__}</code>
-  🦋  <b>| User      :</b>    <code>{user}</code>
+  🦋  <b>| User      :</b>          `Alicia`
 <b> ➖➖➖➖➖➖➖➖ </b>
    {Bot_Alive._get_mode()}      <b>|</b>     {userge.uptime}
 """
