@@ -133,7 +133,7 @@ class Bot_Alive:
   🔥  <b> Pyro      :</b>    <code>v{versions.__pyro_version__}</code>
   🦋  <b> User      :</b>    `Alicia`
 
- {Bot_Alive._get_mode()}      <b>|</b>     {userge.uptime}
+ {Bot_Alive._get_mode()}   <b>|</b>   {userge.uptime}
 """
         return alive_info
 
