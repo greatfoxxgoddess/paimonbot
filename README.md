@@ -5,7 +5,7 @@
    <br>
    <br>
 </p>
-<h1><a href="https://telegram.dog/aliciadark"Paimon</a></h1>
+<h1><a href="https://telegram.dog/aliciadarkbot">Paimon</a></h1>
 <b>Pluggable Telegram UserBot</b>
 <br> 
 
