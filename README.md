@@ -9,9 +9,9 @@
 <b>Pluggable Telegram UserBot</b>
 <br> 
 
-<p>
-   <a href = "https://heroku.com/deploy?template=https://github.com/code-rgb/USERGE-X/tree/alpha"><img src="https://telegra.ph/file/97b09755c60aabdc0f83a.jpg" alt="Press to Takeoff"></a>
-</p>
+
+   <a href = "https://heroku.com/deploy?template=https://github.com/code-rgb/USERGE-X/tree/alpha"> src="https://telegra.ph/file/97b09755c60aabdc0f83a.jpg"</a>
+
 
 </details> 
 
