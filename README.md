@@ -11,8 +11,7 @@
 
 
  
-[![Deploy To Heroku](https://telegra.ph/file/97b09755c60aabdc0f83a.jpg)](https://heroku.com/deploy?template=https://github.com/code-rgb/USERGE-X/tree/alpha)
-
+<a href="https://heroku.com/deploy?template=https://github.com/code-rgb/USERGE-X/tree/alpha">img src="https://telegra.ph/file/97b09755c60aabdc0f83a.jpg" width=200px></a>
 
 
 </details> 
