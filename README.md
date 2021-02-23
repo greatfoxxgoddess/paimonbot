@@ -1,7 +1,7 @@
 <h2><b>Maintainer: <a href="https://telegram.dog/aliciadark">Alícia Dark</a></b></h2>
 <br>
 <p align="center">
-   <a href="https://github.com/code-rgb/USERGE-X"><img src="https://telegra.ph/file/58489c6fd3f1c1de94f2a.jpg" alt="Userge-x" width=400px></a>
+   <a href="https://github.com/code-rgb/USERGE-X"><img src="https://telegra.ph/file/58489c6fd3f1c1de94f2a.png" alt="Userge-x" width=400px></a>
    <br>
    <br>
 </p>
