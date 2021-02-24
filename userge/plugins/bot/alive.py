@@ -168,7 +168,6 @@ class Bot_Alive:
             "https://telegra.ph/file/b1b9d233f01815b20a4b8.jpg",
             "https://telegra.ph/file/c22a31d1dc68fe83a4cac.jpg",
             "https://telegra.ph/file/46fbf0c18282d5526519b.jpg",
-            "https://telegra.ph/file/ec8027ae1c3d452375017.mp4"
+            "https://telegra.ph/file/ec8027ae1c3d452375017.mp4",
         ]
         return rand_array(alive_imgs)
-
