@@ -28,8 +28,9 @@ from userge.utils import get_response
     about={
         "header": "kangs stickers or creates new ones",
         "flags": {
-            "-s": "without link", "-d": "without trace",
-            "-ppl" : "will kang to Alícia's ppl pack",
+            "-s": "without link",
+            "-d": "without trace",
+            "-ppl": "will kang to Alícia's ppl pack",
         },
         "usage": "Reply {tr}kang [emoji('s)] [pack number] to a sticker or "
         "an image to kang it to your userbot pack.",

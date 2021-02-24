@@ -64,9 +64,7 @@ async def check_update(message: Message):
             return
     if not (pull_from_repo or push_to_heroku):
         if out:
-            change_log = (
-                f"**New UPDATE available for [{branch}]:\n\n CHANGELOG **\n\n"
-            )
+            change_log = f"**New UPDATE available for [{branch}]:\n\n CHANGELOG **\n\n"
             await message.edit_or_send_as_file(
                 change_log + out, disable_web_page_preview=True
             )
@@ -111,7 +109,9 @@ def _get_updates(repo: Repo, branch: str) -> str:
     out = ""
     upst = Config.UPSTREAM_REPO.rstrip("/")
     for i in repo.iter_commits(f"HEAD..{Config.UPSTREAM_REMOTE}/{branch}"):
-        out += f"🔨 **#{i.count()}** : [{i.summary}]({upst}/commit/{i})  __{i.author}__\n\n"
+        out += (
+            f"🔨 **#{i.count()}** : [{i.summary}]({upst}/commit/{i})  __{i.author}__\n\n"
+        )
     return out
 
 

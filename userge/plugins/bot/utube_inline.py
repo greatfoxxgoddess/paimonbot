@@ -571,4 +571,3 @@ def download_button(vid: str, body: bool = False):
         vid_body = f"<b>[{vid_data.get('title')}]({vid_data.get('webpage_url')})</b>"
         return vid_body, InlineKeyboardMarkup(buttons)
     return InlineKeyboardMarkup(buttons)
-
